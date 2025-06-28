@@ -302,10 +302,6 @@ def TWITTER():
                                         'data': 'null',
                                         'type': type,
                                         }
-                            elif 'errors' and 'Could not authenticate you' in str(response2):
-                                print("Cookie Die Đổi Tài Khản Khác Chạy Đê")
-                                os.remove('COOKIE'+str(account_id)+'.txt')
-                                return 0
                         elif type=='comment':
                             comment = nos['lock']["message"]
                             url = 'https://x.com/i/api/graphql/oB-5XsHNAbjvARJEc8CZFw/CreateTweet'
