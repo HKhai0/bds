@@ -1,3 +1,4 @@
+
 try :
     import requests
     import time
@@ -18,7 +19,13 @@ except ImportError:
 def countdown(time_sec):
     for remaining_time in range(time_sec, -1, -1):
         colors = [
-            "\033[1;37mFinding",
+            "\033[1;37mH\033[1;36mo\033[1;35mà\033[1;32mi \033[1;31mN\033[1;34ma\033[1;33mm\033[1;36m🍉 - Tool\033[1;36m Vip \033[1;31m\033[1;32m",
+            "\033[1;34mH\033[1;31mo\033[1;37mà\033[1;36mi \033[1;32mN\033[1;35ma\033[1;37mm\033[1;32m🍉 - Tool\033[1;34m Vip \033[1;31m\033[1;32m",
+            "\033[1;31mH\033[1;37mo\033[1;36mà\033[1;33mi \033[1;35mN\033[1;32ma\033[1;34mm\033[1;37m🍉 - Tool\033[1;33m Vip \033[1;31m\033[1;32m",
+            "\033[1;32mH\033[1;33mo\033[1;34mà\033[1;35mi \033[1;36mN\033[1;37ma\033[1;36mm\033[1;34m🍉 - Tool\033[1;31m Vip \033[1;31m\033[1;32m",
+            "\033[1;37mH\033[1;34mo\033[1;35mà\033[1;36mi \033[1;32mN\033[1;33ma\033[1;31mm\033[1;34m🍉 - Tool\033[1;37m Vip \033[1;31m\033[1;32m",
+            "\033[1;34mH\033[1;33mo\033[1;37mà\033[1;35mi \033[1;31mN\033[1;36ma\033[1;36mm\033[1;37m🍉 - Tool\033[1;36m Vip \033[1;31m\033[1;32m",
+            "\033[1;36mH\033[1;35mo\033[1;31mà\033[1;34mi \033[1;37mN\033[1;35ma\033[1;32mm\033[1;33m🍉 - Tool\033[1;33m Vip \033[1;31m\033[1;32m",
         ]
         for color in colors:
             print(f"\r{color}|{remaining_time}| \033[1;31m", end="")
@@ -302,6 +309,10 @@ def TWITTER():
                                         'data': 'null',
                                         'type': type,
                                         }
+                            elif 'errors' and 'Could not authenticate you' in str(response2):
+                                print("Cookie Die Đổi Tài Khản Khác Chạy Đê")
+                                os.remove('COOKIE'+str(account_id)+'.txt')
+                                return 0
                         elif type=='comment':
                             comment = nos['lock']["message"]
                             url = 'https://x.com/i/api/graphql/oB-5XsHNAbjvARJEc8CZFw/CreateTweet'
@@ -442,9 +453,19 @@ def TWITTER():
 def banner():
  os.system("cls" if os.name == "nt" else "clear")
  banner = f"""
-\033[1;97mTool Cracked: \033[1;36mHKhai0          \033[1;97m
+\033[1;31m██╗  ██╗███╗   ██╗    ████████╗ ██████╗  ██████╗ ██╗
+\033[1;34m██║  ██║████╗  ██║    ╚══██╔══╝██╔═══██╗██╔═══██╗██║  
+\033[1;31m███████║██╔██╗ ██║       ██║   ██║   ██║██║   ██║██║  
+\033[1;34m██╔══██║██║╚██╗██║       ██║   ██║   ██║██║   ██║██║ 
+\033[1;31m██║  ██║██║ ╚████║       ██║   ╚██████╔╝╚██████╔╝███████╗
+\033[1;34m╚═╝  ╚═╝╚═╝  ╚═══╝       ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝\n
+\033[1;97mTool By: \033[1;36mHoài Nam Offfical          \033[1;97m
 \033[97m════════════════════════════════════════════════  
-\033[1;31mTOOL AUTO GOLIKE - TWITTER
+\033[1;97m[\033[1;91m<>\033[1;97m]\033[1;95m BOX ZALO\033[1;31m : \033[1;36mhttps://zalo.me/g/yljlci403
+\033[1;97m[\033[1;91m<>\033[1;97m]\033[1;93m YOUTUBE\033[1;31m : \033[1;32mHoài Nam Offical
+\033[1;97m[\033[1;91m<>\033[1;97m]\033[1;32m ADMIN\033[1;31m : \033[1;33mHoài Nam
+\033[97m════════════════════════════════════════════════  
+\033[1;31m              TOOL AUTO GOLIKE - TWITTER
 """
  for X in banner:
   sys.stdout.write(X)
@@ -458,7 +479,7 @@ os.system('cls' if os.name== 'nt' else 'clear')
 banner()
 checkfile = os.path.isfile('user.txt')
 if checkfile == False:
-    AUTHUR = input(Fore.GREEN+'\033[1;97m[\033[là 1;91m❣\033[1;97m] \033[1;36m✈  \033[1;32mInput Authorization Golike : ')
+    AUTHUR = input(Fore.GREEN+'\033[1;97m[\033[1;91m❣\033[1;97m] \033[1;36m✈  \033[1;32mNHẬP Authorization Golike : ')
     createfile = open('user.txt','w')
     createfile.write(AUTHUR)
     createfile.close()
